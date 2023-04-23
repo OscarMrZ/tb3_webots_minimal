@@ -32,7 +32,7 @@ from webots_ros2_driver.utils import controller_url_prefix
 
 
 def get_ros2_nodes(*args):
-    package_dir = get_package_share_directory('webots_sim')
+    package_dir = get_package_share_directory('tb3_webots_minimal')
     robot_description = pathlib.Path(os.path.join(package_dir, 'resource', 'turtlebot_webots.urdf')).read_text()
     ros2_control_params = os.path.join(package_dir, 'resource', 'ros2control.yml')
     use_sim_time = LaunchConfiguration('use_sim_time', default=True)
@@ -103,7 +103,7 @@ def get_ros2_nodes(*args):
 
 
 def generate_launch_description():
-    package_dir = get_package_share_directory('webots_sim')
+    package_dir = get_package_share_directory('tb3_webots_minimal')
     world = LaunchConfiguration('world')
     mode = LaunchConfiguration('mode')
 
